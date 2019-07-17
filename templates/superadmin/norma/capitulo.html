@@ -1,0 +1,67 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <h4 class="header">
+        <a href="{{ request.META.HTTP_REFERER }}">
+            <i class="material-icons white-text icon-bg-color main-bg">keyboard_arrow_left</i>
+        </a>
+        <a class="btn dropdown-settings waves-effect waves-light breadcrumbs-btn right"
+           href="{% url 'admin:norma-capitulo-create' object.pk %}">
+            <span class="hide-on-small-onl">Crear Capitulo</span>
+            <i class="material-icons right">note_add</i>
+        </a>
+    </h4>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col s12 m12 l6">
+                <div class="card-panel">
+                    <h4 class="header2">
+                        <i class="material-icons">playlist_add_check</i> Capitulos Asignados
+                    </h4>
+                    <div class="row">
+                        <div class="col s12">
+                            {% for item in asignados %}
+                                <p>
+                                    <input type="checkbox" class="filled-in" name="asignados[]"
+                                           value="{{ item.pk }}" id="asignados_{{ item.pk }}" checked>
+                                    <label for="asignados_{{ item.pk }}">{{ item.nombre }}</label>
+                                </p>
+                            {% empty %}
+                                Esta norma no tiene capitulos asignados
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m12 l6">
+                <div class="card-panel">
+                    <h4 class="header2">
+                        <i class="material-icons">playlist_add</i> Capitulos Disponibles
+                    </h4>
+                    <div class="row">
+                        <div class="col s12">
+                            {% for item in disponibles %}
+                                <p>
+                                    <input type="checkbox" class="filled-in" name="disponibles[]"
+                                           value="{{ item.pk }}" id="disponibles_{{ item.pk }}">
+                                    <label for="disponibles_{{ item.pk }}">{{ item.nombre }}</label>
+                                </p>
+                            {% empty %}
+                                No hay capitulos disponibles
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <button class="btn waves-effect waves-light right" type="submit">
+                    Enviar
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

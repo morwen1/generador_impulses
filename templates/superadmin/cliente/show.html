@@ -1,0 +1,66 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <div class='entityHeader--navBack'>
+        <div class='headerDisplay'>
+            <a href="{% url 'admin:analista-list' %}">
+                <span>
+                    <i class='material-icons'>keyboard_arrow_left</i>
+                </span>
+            </a>
+            <span>
+                <i class='material-icons'>supervisor_account</i>
+            </span>
+            <h1>{{ object.nombre }}</h1>
+        </div>
+    </div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <td>{{ object.pk }}</td>
+        </tr>
+        <tr>
+            <th>Nombre y Apellido</th>
+            <td>{{ object.usuario.persona.nombre }} {{ object.usuario.persona.apellido }}</td>
+        </tr>
+        <tr>
+            <th>Correo electrónico</th>
+            <td>{{ object.usuario.persona.email }}</td>
+        </tr>
+        <tr>
+            <th>Teléfonos</th>
+            <td>
+                <ul>
+                    {% for item in object.usuario.persona.telefonos.all %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Fecha de creación</th>
+            <td>{{ object.usuario.persona.fecha_creacion }}</td>
+        </tr>
+        <tr>
+            <th>Fecha de edición</th>
+            <td>{{ object.usuario.persona.fecha_edicion }}</td>
+        </tr>
+        {% if object.normas.all %}
+            <tr>
+                <th colspan="2">Normas Asignadas</th>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <ul>
+                        {% for item in object.normas.all %}
+                            <li>{{ item.descripcion }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+        {% endif %}
+    </table>
+    <div class='entityActions'>
+        <a class='accentButton' href="{% url 'admin:analista-norma' object.pk %}">Asignar Normas</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <h4 class="header">
+        <i class='material-icons'>card_membership</i> Mis Licencias
+        <a class="btn dropdown-settings waves-effect waves-light breadcrumbs-btn right"
+           href="{% url 'admin:licencia-create' %}">
+            <span class="hide-on-small-onl">Crear Licencia</span>
+            <i class="material-icons right">note_add</i>
+        </a>
+    </h4>
+    <div class="row">
+        <div class="col s12">
+            <table class="responsive-table highlight">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Cliente</th>
+                    <th>Normas</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in object_list %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ item.licencias_cliente.0.cliente.usuario.persona }}</td>
+                        <td>
+                            {% for item in item.licencias_cliente %}
+                                <div class="chip">
+                                    {{ item.norma.descripcion }}
+                                </div>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

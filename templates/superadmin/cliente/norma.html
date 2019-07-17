@@ -1,0 +1,23 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <div class='entityHeader--navBack'>
+        <div class='headerDisplay'>
+            <a href="{% url 'admin:analista-detail' object.pk %}">
+                <span>
+                    <i class='material-icons'>keyboard_arrow_left</i>
+                </span>
+            </a>
+            <span>
+                <i class='material-icons'>supervisor_account</i>
+            </span>
+            <h1>Asignar Normas</h1>
+        </div>
+    </div>
+    <form method="POST" id="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" id="submit">
+    </form>
+    <br>
+{% endblock %}

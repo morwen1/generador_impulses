@@ -1,0 +1,76 @@
+.content {
+  padding: $globalPaddingSmall;
+  float: left;
+  width: 74vw;
+}
+
+.entityHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: $globalPaddingSmall;
+  a {
+    font-weight: $fontWeight--black;
+  }
+  .headerDisplay {
+    display: flex;
+    align-items: center;
+    i {
+      float: left;
+    }
+    h1 {
+      float: left;
+      margin: 0;
+      margin-left: $globalPaddingTiny;
+    }
+  }
+}
+
+.entityHeader--navBack {
+  @extend .entityHeader;
+  justify-content: flex-start;
+  a {
+    color: $dark-grey;
+  }
+}
+
+.accentButton {
+  @include gradienteColorMarca();
+  @include curvedButton();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: $globalPaddingTiny 0;
+  text-transform: capitalize;
+  font-weight: $fontWeight--black;
+}
+
+.accentButton--BottomRight {
+  @include gradienteColorMarca();
+  @include curvedButton();
+  text-transform: capitalize;
+  font-weight: $fontWeight--black;
+  float:right;
+  margin: $globalPaddingTiny 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secondaryButton {
+  @include curvedButton();
+  box-sizing: border-box;
+  margin: $globalPaddingTiny;
+  border: solid 3px $mid-grey;
+  font-weight: $fontWeight--black;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.entityActions {
+  float: right;
+  margin: $globalPaddingTiny;
+  display: flex;
+}

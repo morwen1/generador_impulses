@@ -1,0 +1,41 @@
+body, form, input {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+  background: $blanco;
+  font-weight: 200;
+  color: #666688;
+}
+label, label:hover{
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: inherit;
+}
+ul{
+  list-style: none;
+  padding: 0;
+}
+li {
+  margin: $globalPaddingTiniest;
+  padding: $globalPaddingTiniest;
+}
+li:hover {
+  @include animate();
+  @include curved();
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.u-text-left{
+  text-align: left;
+}
+

@@ -1,0 +1,53 @@
+.NavBar {
+  @include shadow();
+  background: $blanco-total;
+  min-height: 94vh;
+  padding: $globalPaddingSmall;
+  position: sticky;
+  top: 0;
+  left: 0;
+  float: left;
+  width: 30vh;
+  color: $dark-grey;
+  a {
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-left: $globalPaddingTiny;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: flex-start;
+  }
+  .logo {
+    @include circle();
+    @include shadow();
+    background: $dark-grey;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: $globalPaddingTiny;
+    left: $globalPaddingTiny;
+    .logoSVG {
+      width: 90%;
+      height: auto;
+    }
+  }
+}
+
+.MenuDisplay {
+  h2 {
+    margin-top: 0;
+    margin-left: $globalPaddingSmall;
+  }
+}
+
+
+
+.menuToggle {
+  float:left;
+}

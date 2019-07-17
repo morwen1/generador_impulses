@@ -1,0 +1,46 @@
+{% load staticfiles %}
+{% load sass_tags %}
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inova</title>
+    <!-- Temporary -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900|Open+Sans:300,400,600" rel="stylesheet">
+    <link href="{% sass_src './css/index.scss' %}" rel="stylesheet" type="text/css" />
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+    <!-- /Temporary -->
+    {% block css %}
+    {% endblock %}
+</head>
+<body>
+    {% block sidebar %}
+        {% include './NavBar.html' %}
+    {% endblock sidebar%}
+    <div class='content'>
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <section>
+        <script src="{% static 'js/main.js' %}"></script>
+        {% block js %}
+        {% endblock %}
+    </section>
+</body>
+</html>

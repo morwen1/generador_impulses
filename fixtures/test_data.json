@@ -1,0 +1,292 @@
+[
+  {
+    "model": "norma.norma",
+    "pk": 1,
+    "fields": {
+      "descripcion": "Autorización Sanitaria",
+      "ponderada": true,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "norma.norma",
+    "pk": 2,
+    "fields": {
+      "descripcion": "Granja Biosegura",
+      "ponderada": false,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "norma.norma",
+    "pk": 3,
+    "fields": {
+      "descripcion": "BP Porcinas",
+      "ponderada": false,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "norma.norma",
+    "pk": 4,
+    "fields": {
+      "descripcion": "BPG-Leche",
+      "ponderada": false,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.capitulo",
+    "pk": 1,
+    "fields": {
+      "nombre": "SANIDAD ANIMAL Y BIOSEGURIDAD",
+      "descripcion": "SANIDAD ANIMAL Y BIOSEGURIDAD",
+      "ponderacion": 30,
+      "norma": 1,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.capitulo",
+    "pk": 2,
+    "fields": {
+      "nombre": "PLAN DE SANEAMIENTO",
+      "descripcion": "PLAN DE SANEAMIENTO",
+      "ponderacion": 20,
+      "norma": 1,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.capitulo",
+    "pk": 3,
+    "fields": {
+      "nombre": "USO DE MEDICAMENTOS Y ALIMENTACIÓN ANIMAL",
+      "descripcion": "USO DE MEDICAMENTOS Y ALIMENTACIÓN ANIMAL",
+      "ponderacion": 30,
+      "norma": 1,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.capitulo",
+    "pk": 4,
+    "fields": {
+      "nombre": "BIENESTAR ANIMAL Y PERSONAL",
+      "descripcion": "BIENESTAR ANIMAL Y PERSONAL",
+      "ponderacion": 20,
+      "norma": 1,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.capitulo",
+    "pk": 5,
+    "fields": {
+      "nombre": "OBLIGACIONES GENERALES",
+      "descripcion": "OBLIGACIONES GENERALES",
+      "ponderacion": null,
+      "norma": 2,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.capitulo",
+    "pk": 6,
+    "fields": {
+      "nombre": "BIOSEGURIDAD E INFRAESTRUCTURA",
+      "descripcion": "BIOSEGURIDAD E INFRAESTRUCTURA",
+      "ponderacion": null,
+      "norma": 2,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.capitulo",
+    "pk": 7,
+    "fields": {
+      "nombre": "CLASIFICACIÓN, ALMACENAMIENTO, EMPAQUE, EMBALAJE Y DESPACHO DE HUEVO",
+      "descripcion": "CLASIFICACIÓN, ALMACENAMIENTO, EMPAQUE, EMBALAJE Y DESPACHO DE HUEVO",
+      "ponderacion": null,
+      "norma": 2,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.capitulo",
+    "pk": 8,
+    "fields": {
+      "nombre": "Sanidad animal y bioseguridad",
+      "descripcion": "Sanidad animal y bioseguridad",
+      "ponderacion": null,
+      "norma": 3,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.capitulo",
+    "pk": 9,
+    "fields": {
+      "nombre": "Suministro y calidad de agua",
+      "descripcion": "Suministro y calidad de agua",
+      "ponderacion": null,
+      "norma": 3,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.capitulo",
+    "pk": 10,
+    "fields": {
+      "nombre": "Rutina de ordeño",
+      "descripcion": "Rutina de ordeño",
+      "ponderacion": null,
+      "norma": 4,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.pregunta",
+    "pk": 1,
+    "fields": {
+      "descripcion": "Se cumple con los requisitos establecidos para las enfermedades de control oficial, declaración obligatoria y de vacunación",
+      "ponderacion": 5,
+      "sugerencia": " La finca debe contar con un instructivo visible a todo el personal de la granja que contenga lo siguiente: Sintomatología de las enfermedades de control oficial, las personas a notificar de la finca y a los técnicos del ICA y números de teléfono de contactos. Evidenciar que el personal tiene conocimiento del instructivo. Debe contar con el RUV de vacunación de Fiebre Aftosa y Brucelosis vigente.",
+      "tipo": 1,
+      "capitulo": 1,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.pregunta",
+    "pk": 2,
+    "fields": {
+      "descripcion": "Se realizan actividades de prevención y control de otras enfermedades infecciosas y parasitarias que afectan el predio.",
+      "ponderacion": 5,
+      "sugerencia": "Debe contar con un plan sanitario documentado elaborado y firmado por un médico veterinario o medico veterinario zootecnista, que considere las enfermedades de control oficial, enfermedades endémicas en la granja, así como prácticas de manejo preventivas o curativas y planes de vacunación, vermifugación cuando sea necesario; y procedimientos para diagnostico en granja soportados con pruebas serológicas, resultados de laboratorio, de igual manera puede contemplar los tratamientos comunes realizados en el predio.",
+      "tipo": 2,
+      "capitulo": 2,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.pregunta",
+    "pk": 3,
+    "fields": {
+      "descripcion": "La zona de producción dispones de cercos, broches, puertas, barreras de aislamiento natural y otros mecanismos que delimitan el paso de otros animales o personas ajenas al predio.",
+      "ponderacion": 5,
+      "sugerencia": "Disponer de cercos, broches, puertas y otros mecanismos con cierres en buen estado, que permitan delimitar la propiedad y limitar el paso de animales y personas ajenos al predio. ",
+      "tipo": 4,
+      "capitulo": 3,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.pregunta",
+    "pk": 4,
+    "fields": {
+      "descripcion": "Si el sistema productivo es estabulado cuenta con registro de ingreso y salida de personas y vehículos que contenga como mínimo nombre, fecha, número de identificación o placa del vehículo, teléfono, origen y objeto de visita.",
+      "ponderacion": 5,
+      "sugerencia": "La finca debe contar con registros de ingreso de personas y vehículos.(el registro debe incluir nombre, fecha, No. de identificación o placa del vehículo, numero de teléfono, origen y objeto visita).",
+      "tipo": 1,
+      "capitulo": 4,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.pregunta",
+    "pk": 5,
+    "fields": {
+      "descripcion": "Permite el ingreso de funcionarios ICA en cualquier momento, para efectuar actividades de control.",
+      "ponderacion": null,
+      "sugerencia": "Se debe permitir en todo momento el acceso de funcionarios del ICA, para hacer seguimiento de las medidas establecidas.",
+      "tipo": 1,
+      "capitulo": 5,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.pregunta",
+    "pk": 6,
+    "fields": {
+      "descripcion": "Notifica al ICA la presencia de cuadros respiratorios, síndromes neurológicos o cuadros diarreicos compatibles con enfermedades de control oficial.",
+      "ponderacion": null,
+      "sugerencia": "Es de obligatorio cumplimiento reportar al ICA la presencia de cuadros respiratorios, síndromes neurológicos o cuadros diarreicos compatibles con enfermedades de control oficial.",
+      "tipo": 3,
+      "capitulo": 6,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.pregunta",
+    "pk": 7,
+    "fields": {
+      "descripcion": "Adquirir aves de levante de otras granjas que estén certificadas como Granjas Avícolas Bioseguras.",
+      "ponderacion": null,
+      "sugerencia": "Asegurarse que la adquisición de aves de levante se realice en Granjas Avícolas Bioseguras, certificadas por el ICA.",
+      "tipo": 4,
+      "capitulo": 7,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.pregunta",
+    "pk": 8,
+    "fields": {
+      "descripcion": "Existe registro del predio ante el ICA",
+      "ponderacion": null,
+      "sugerencia": "Es imporatante tener una constancia de registro del predio ante la oficina local del ICA o a quien esta delegue",
+      "tipo": 1,
+      "capitulo": 8,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.pregunta",
+    "pk": 9,
+    "fields": {
+      "descripcion": "El predio se encuentra delimitado",
+      "ponderacion": null,
+      "sugerencia": "Debe disponer de cercos, broches, puertas y otros mecanismos con cierres en buen estado, que permitan delimitar la granja y limitar el paso de animales y personas ajenos a la granja y uso de barreras vivas cuando este cerca de otras explotaciones avícolas o porcícolas. ",
+      "tipo": 2,
+      "capitulo": 9,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.pregunta",
+    "pk": 10,
+    "fields": {
+      "descripcion": "Existe constancia de inscripción de predio ante la oficina local del ICA (RSPP) ",
+      "ponderacion": null,
+      "sugerencia": "Se debe presentar una constancia de registro del predio ante la oficina local del ICA o a quien esta delegue. ",
+      "tipo": 3,
+      "capitulo": 10,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  }
+]

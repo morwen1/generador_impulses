@@ -1,0 +1,159 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+        <h4 class="header">
+        <a href="{{ request.META.HTTP_REFERER }}">
+            <i class="material-icons white-text icon-bg-color main-bg">keyboard_arrow_left</i>
+        </a>
+    </h4>
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <h4 class="header2">Crear Licencia</h4>
+                <div class="row">
+                    <form class="col s12" method="POST">
+                        {% csrf_token %}
+                        <div class="col s12 m4">
+                            <ul id="task-card" class="collection with-header">
+                                <li class="collection-header teal accent-4" style="padding: 10px;">
+                                    <h4 class="task-card-title" style="font-size: 2rem;">Planes</h4>
+                                    <p class="task-card-date" style="text-align: right">P=Profesional(es)</p>
+                                </li>
+                                {% for item in planes %}
+                                    <li class="collection-item dismissable" style="touch-action: pan-y;">
+                                        <input id="id_plan_{{ item.pk }}" name="plan" type="radio">
+                                        <label for="id_plan_{{ item.pk }}" style="text-decoration: none;">
+                                            {{ item.nombre }}
+                                            <a  class="secondary-content">
+                                                <span class="ultra-small">
+                                                    {{ item.profesionales_min }}
+                                                    {% if item.profesionales_max %}
+                                                        - {{ item.profesionales_max }}
+                                                    {% else %}
+                                                        o más
+                                                    {% endif %}
+                                                    P
+                                                </span>
+                                            </a>
+                                        </label>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="col s12 m8">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    {{ form.cliente }}
+                                    {{ form.cliente.label_tag }}
+                                    <span class="pink-text" style="margin-left: 3rem;">
+                                        {{ form.cliente.errors }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    {{ form2.duracion }}
+                                    {{ form2.duracion.label_tag }}
+                                    <span class="pink-text" style="margin-left: 3rem;">
+                                        {{ form2.duracion.errors }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    {{ form2.analistas }}
+                                    <label for="{{ form2.analistas.id_for_label }}"
+                                           id="{{ form2.analistas.id_for_label }}_label">
+                                        Analistas:
+                                    </label>
+                                    <span class="pink-text" style="margin-left: 3rem;">
+                                        {{ form2.analistas.errors }}
+                                    </span>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    {{ form2.profesionales }}
+                                    <label for="{{ form2.profesionales.id_for_label }}"
+                                           id="{{ form2.profesionales.id_for_label }}_label">
+                                        Profesionales
+                                    </label>
+                                    <span class="pink-text" style="margin-left: 3rem;">
+                                        {{ form2.profesionales.errors }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <label>Normas</label>
+                                    <div class="row">
+                                        {% for item in normas %}
+                                            <div class="col s4">
+                                                <input id="id_norma_{{ item.pk }}" type="checkbox" class="filled-in"
+                                                       name="norma[]" value="{{ item.pk }}">
+                                                <label for="id_norma_{{ item.pk }}">
+                                                    {{ item.descripcion }}
+                                                </label>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <button class="btn waves-effect waves-light right" type="submit">
+                                        Enviar
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script>
+        {% for item in planes %}
+            document.getElementById('id_plan_{{ item.pk }}').addEventListener('click', function () {
+                document.getElementById('id_analistas').value = {{ item.analistas }};
+                document.getElementById('id_profesionales').value = {{ item.profesionales_min }};
+                setActiveClass(document.getElementById('id_analistas_label'));
+                setActiveClass(document.getElementById('id_profesionales_label'));
+            });
+        {% endfor %}
+
+        document.getElementById('id_profesionales').addEventListener('change', function () {
+            setActivePlan(this.value);
+        });
+
+        document.getElementById('id_profesionales').addEventListener('keyup', function () {
+            setActivePlan(this.value);
+        });
+
+        function setActivePlan(value){
+            {% for item in planes %}
+                {% if item.profesionales_max %}
+                    if(value >= {{ item.profesionales_min }} && value <= {{ item.profesionales_max }}){
+                        document.getElementById('id_plan_{{ item.pk }}').checked = true;
+                    }
+                {% else %}
+                    if(value > {{ item.profesionales_min }}){
+                        document.getElementById('id_plan_{{ item.pk }}').checked = true;
+                    }
+                {% endif %}
+            {% endfor %}
+        }
+
+        function setActiveClass(element){
+            if(!element.classList.contains('active')){
+                element.classList.add('active');
+            }
+        }
+    </script>
+{% endblock %}

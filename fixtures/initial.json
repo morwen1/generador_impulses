@@ -1,0 +1,92 @@
+[
+  {
+    "model": "capitulo.tipopregunta",
+    "pk": 1,
+    "fields": {
+      "tipo": "STANDARD",
+      "esp": "Estándar"
+    }
+  },
+  {
+    "model": "capitulo.tipopregunta",
+    "pk": 2,
+    "fields": {
+      "tipo": "TEXT",
+      "esp": "Texto"
+    }
+  },
+  {
+    "model": "capitulo.tipopregunta",
+    "pk": 3,
+    "fields": {
+      "tipo": "NUMERIC",
+      "esp": "Numérico"
+    }
+  },
+  {
+    "model": "capitulo.tipopregunta",
+    "pk": 4,
+    "fields": {
+      "tipo": "LOCATION",
+      "esp": "Ubicación"
+    }
+  },
+  {
+    "model": "capitulo.tipopregunta",
+    "pk": 5,
+    "fields": {
+      "tipo": "SLIDING",
+      "esp": "Deslizante"
+    }
+  },
+  {
+    "model": "capitulo.tipopregunta",
+    "pk": 6,
+    "fields": {
+      "tipo": "MULTIPLE_CHOICE",
+      "esp": "Selección múltiple"
+    }
+  },
+  {
+    "model": "capitulo.tipopregunta",
+    "pk": 7,
+    "fields": {
+      "tipo": "PHONE",
+      "esp": "Teléfono"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$36000$l51qjgDKqVS0$ySM1qJxpluUSejP3PAGzxiiKBW/eizAsjH8a1hmf0cY=",
+      "is_superuser": 1,
+      "username": "admin",
+      "email": "admin@in-ova.co",
+      "is_staff": 1,
+      "is_active": 1,
+      "date_joined": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "user.administrador",
+    "pk": 1,
+    "fields": {
+      "usuario": 1
+    }
+  },
+  {
+    "model": "user.persona",
+    "pk": 1,
+    "fields": {
+      "nombre": "In-Ova",
+      "apellido": "Admin",
+      "cedula": "123456789",
+      "genero": "M",
+      "email": "admin@in-ova.co",
+      "usuario": 1,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  }
+]

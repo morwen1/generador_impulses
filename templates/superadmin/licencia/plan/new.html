@@ -1,0 +1,67 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+        <h4 class="header">
+        <a href="{{ request.META.HTTP_REFERER }}">
+            <i class="material-icons white-text icon-bg-color main-bg">keyboard_arrow_left</i>
+        </a>
+    </h4>
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <h4 class="header2">Crear Plan</h4>
+                <div class="row">
+                    <form class="col s12" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                {{ form.nombre }}
+                                {{ form.nombre.label_tag }}
+                                <span class="pink-text" style="margin-left: 3rem;">
+                                    {{ form.nombre.errors }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                {{ form.analistas }}
+                                {{ form.analistas.label_tag }}
+                                <span class="pink-text" style="margin-left: 3rem;">
+                                    {{ form.analistas.errors }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                {{ form.profesionales_min }}
+                                {{ form.profesionales_min.label_tag }}
+                                <span class="pink-text" style="margin-left: 3rem;">
+                                    {{ form.profesionales_min.errors }}
+                                </span>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                {{ form.profesionales_max }}
+                                {{ form.profesionales_max.label_tag }}
+                                <span class="pink-text" style="margin-left: 3rem;">
+                                    {{ form.profesionales_max.errors }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <button class="btn waves-effect waves-light right" type="submit">
+                                    Enviar
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

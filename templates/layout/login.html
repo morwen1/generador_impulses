@@ -1,0 +1,22 @@
+{% load staticfiles %}
+
+<html>
+<head>
+    <title>InOva</title>
+    <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet">
+    <link href="{%  static 'css/style.css' %}" type="text/css" rel="stylesheet">
+    <link href="{%  static 'css/login.css' %}" type="text/css" rel="stylesheet">
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <div class="section"></div>
+    <main>
+        {% block content %}{% endblock %}
+        <div class="section"></div>
+        <div class="section"></div>
+    </main>
+    <script type="text/javascript" src="{%  static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+    {% block js %}{% endblock %}
+</body>
+</html>

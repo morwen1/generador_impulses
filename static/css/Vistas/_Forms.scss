@@ -1,0 +1,63 @@
+form {
+  label {
+    width:100%;
+    font-size: 12px;
+  }
+  input {
+    @include curved();
+    width: 100%;
+    box-sizing: border-box;
+    margin: $globalPaddingTiny 0;
+    padding: $globalPaddingTiny;
+    outline: 0;
+    border: solid 2px $mid-grey;
+  }
+  select {
+    width: 100%;
+    box-sizing: border-box;
+    margin: $globalPaddingTiny 0;
+    padding: $globalPaddingTiny;
+    outline: 0;
+    border: solid 2px $mid-grey;
+    background: transparent;
+    height: 45px;
+  }
+  textarea {
+    @include curved();
+    width: 100%;
+    box-sizing: border-box;
+    margin: $globalPaddingTiny 0;
+    padding: $globalPaddingTiny;
+    outline: 0;
+    border: solid 2px $mid-grey;
+    background: transparent;
+  }
+  textarea:focus, input:focus {
+    outline: 0;
+  }
+  input[type="radio"],
+  input[type="checkbox"] {
+    width: fit-content;
+    margin: $globalPaddingTiny;
+    cursor: pointer;
+  } 
+  #submit, input[type="submit"]{
+    @include curvedButton();
+    @include gradienteColorMarca();
+    border: none;
+    outline: none;
+    font-weight: $fontWeight--bold;
+    cursor: pointer;
+    float: right;
+    font-size: $globalPaddingTiny;
+    width: 10vw;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-transform: capitalize;
+  }
+}

@@ -1,0 +1,56 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <h4 class="header">
+        <i class='material-icons'>class</i> Mis Normas
+        <a class="btn dropdown-settings waves-effect waves-light breadcrumbs-btn right"
+           href="{% url 'admin:norma-create' %}">
+            <span class="hide-on-small-onl">Crear Norma</span>
+            <i class="material-icons right">note_add</i>
+        </a>
+    </h4>
+    <div class="row">
+        <div class="col s12">
+            <table class="responsive-table highlight">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Tipo de Norma</th>
+                    <th>Fecha de creación</th>
+                    <th>Fecha de actualización</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in object_list %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ item.descripcion }}</td>
+                        <td>{{ item.tipo_norma }}</td>
+                        <td>{{ item.fecha_creacion }}</td>
+                        <td>{{ item.fecha_edicion }}</td>
+                        <td>
+                            <a class="btn-floating waves-effect waves-light cyan"
+                               href="{% url 'admin:norma-detail' item.pk %}">
+                                <i class="material-icons">search</i>
+                            </a>
+                            <a class="btn-floating waves-effect waves-light yellow darken-2"
+                               href="{% url 'admin:norma-edit' item.pk %}">
+                                <i class="material-icons">mode_edit</i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script>
+        //var table = document.getElementById('table.content');
+        //Request('{% url 'norma:norma-list' %}', 'GET', null, table);
+    </script>
+{% endblock %}

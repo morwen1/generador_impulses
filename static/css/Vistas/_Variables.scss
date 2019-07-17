@@ -1,0 +1,125 @@
+//colores de marca
+$marca-color-acento: #2936d6; //4527d8
+$marca-color-acento-claro: #3140f7;
+$marca-color-primario: #2cfd90;
+$marca-color-primario-claro: #63feca;
+
+
+//colores genericos
+$blanco: #f6f7fb;
+$blanco-total: #ffffff;
+$dark-grey: #2f4770;
+$mid-grey: #b0b4c1;
+
+$body-grey: #666688;
+
+//spacing
+
+$containerSize-full:97%;
+$globalPadding:5em;
+$globalPaddingTiniest: 0.5em;
+$globalPaddingTiny:1em;
+$globalPaddingSmall:2em;
+$globalPaddingMedium:4em;
+$globalPaddingLarge:6em;
+$globalPaddingJumbo:8em;
+
+$fontWeight--light:300;
+$fontWeight--regular:400;
+$fontWeight--bold:600;
+$fontWeight--black:800;
+
+$fontSize:24px;
+$fontSizeSmall:18px;
+$fontSizeSmaller:12px;
+$fontSizeTiny:10px;
+$fontSizeJumbo: 3em;
+
+@mixin animate {
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+@mixin curved {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  overflow:hidden;
+}
+
+@mixin curvedButton {
+   -webkit-border-radius: 5em;
+  -moz-border-radius: 5em;
+  border-radius: 5em;
+  padding: 0.5rem 2rem;
+  overflow: hidden;
+  color: $body-grey;
+}
+@mixin circle {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  overflow:hidden;
+}
+
+.u-uppercase{
+  text-transform: uppercase;
+}
+
+.hidden {
+  display: none;
+}
+
+@mixin shadow {
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(110, 140, 181, 0.25);
+  -moz-box-shadow:    0px 1px 3px 0px rgba(110, 140, 181, 0.25);
+  box-shadow:         0px 1px 3px 0px rgba(110, 140, 181, 0.25);
+}
+
+.breathe {
+  padding:1.5em !important;
+}
+
+.button-hover-purple {
+  background-color: rgba(26, 35, 126, 0.1) !important;
+  border-color: rgba(26, 35, 126, 0.3)  !important;
+}
+.u-textleft{
+  text-align: left;
+}
+.buttonHover{
+  background-color: rgba(26, 35, 126, 0.1) !important;
+  border-color: rgba(26, 35, 126, 0.3)  !important;
+}
+
+.hiddenHover{
+  opacity: 0;
+}
+.hoverHidden{
+  opacity: 1;
+}
+.hoverSwitch:hover{
+  .hiddenHover {
+    opacity: 1;
+  }
+  .hoverHidden {
+    opacity: 0;
+  }
+}
+
+.button{
+
+}
+.button:hover{
+
+}
+
+@mixin gradienteColorMarca {
+  background: #63feca; /* Old browsers */
+  background: -moz-linear-gradient(top, #63feca 0%, #2cfd90 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #63feca 0%,#2cfd90 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #63feca 0%,#2cfd90 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63feca', endColorstr='#2cfd90',GradientType=0 ); /* IE6-9 */
+}

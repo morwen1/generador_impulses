@@ -1,0 +1,128 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <h4 class="header">
+        <a href="{{ request.META.HTTP_REFERER }}">
+            <i class="material-icons white-text icon-bg-color main-bg">keyboard_arrow_left</i>
+        </a>
+        <a class="btn dropdown-settings waves-effect waves-light breadcrumbs-btn right"
+           href="{% url 'admin:capitulo-pregunta-create' object.pk %}">
+            <span class="hide-on-small-onl">Crear Pregunta</span>
+            <i class="material-icons right">note_add</i>
+        </a>
+    </h4>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col s12 m12 l6">
+                <div class="card-panel">
+                    <h4 class="header2">
+                        <i class="material-icons">playlist_add_check</i> Preguntas Asignadas
+                    </h4>
+                    <div class="row">
+                        <div class="col s12">
+                            {% for item in asignados %}
+                                <p>
+                                    <input type="checkbox" class="filled-in" name="asignados[]"
+                                           value="{{ item.pk }}" id="asignados_{{ item.pk }}" checked>
+                                    <label for="asignados_{{ item.pk }}">{{ item.descripcion }}</label>
+                                </p>
+                            {% empty %}
+                                Esta capitulo no tiene preguntas asignadas
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m12 l6">
+                <div class="card-panel">
+                    <h4 class="header2">
+                        <i class="material-icons">playlist_add</i> Preguntas Disponibles
+                    </h4>
+                    <div class="row">
+                        <div class="col s12">
+                            {% for item in disponibles %}
+                                <p>
+                                    <input type="checkbox" class="filled-in" name="disponibles[]"
+                                           value="{{ item.pk }}" id="disponibles_{{ item.pk }}">
+                                    <label for="disponibles_{{ item.pk }}">{{ item.descripcion }}</label>
+                                </p>
+                            {% empty %}
+                                No hay preguntas disponibles
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <button class="btn waves-effect waves-light right" type="submit">
+                    Enviar
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </div>
+    </form>
+    <!--<div class='entityHeader'>
+        <div class='headerDisplay'>
+            <a href="{% url 'admin:capitulo-detail' object.pk %}">
+                <span>
+                    <i class='material-icons'>keyboard_arrow_left</i>
+                </span>
+            </a>
+            <span>
+                <i class='material-icons'>assignment_turned_in</i>
+            </span>
+            <h1>Agregar Preguntas</h1>
+        </div>
+        <a href="{% url 'admin:capitulo-pregunta-create' object.pk %}" class="secondaryButton">Crear Pregunta</a>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    <strong>Preguntas Asignadas</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ol>
+                        {% for item in asignados %}
+                            <li>
+                                <input type="checkbox" name="asignados[]" value="{{ item.pk }}" checked>
+                                {{ item.descripcion }}
+                            </li>
+                        {% empty %}
+                            Este Capitulo no tiene preguntas asignadas
+                        {% endfor %}
+                    </ol>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <td>Preguntas Disponibles</td>
+            </tr>
+            <tr>
+                <td>
+                    <ol>
+                        {% for item in disponibles %}
+                            <li>
+                                <input type="checkbox" name="disponibles[]" value="{{ item.pk }}">
+                                {{ item.descripcion }}
+                            </li>
+                        {% empty %}
+                            No hay preguntas disponibles
+                        {% endfor %}
+                    </ol>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" id="submit">
+    </form>
+    <br><br>-->
+{% endblock %}

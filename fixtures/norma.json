@@ -1,0 +1,115 @@
+[
+  {
+    "model": "norma.norma",
+    "pk": 1,
+    "fields": {
+      "descripcion": "La Norma",
+      "ponderada": true,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.capitulo",
+    "pk": 1,
+    "fields": {
+      "nombre": "El capitulo",
+      "descripcion": "La descripción",
+      "ponderacion": 100,
+      "norma": 1,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.pregunta",
+    "pk": 1,
+    "fields": {
+      "descripcion": "Pregunta Estándar",
+      "ponderacion": 5,
+      "sugerencia": "Sugerencia...",
+      "tipo": 1,
+      "capitulo": 1,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.pregunta",
+    "pk": 2,
+    "fields": {
+      "descripcion": "Pregunta de Texto",
+      "ponderacion": 5,
+      "sugerencia": "Sugerencia...",
+      "tipo": 2,
+      "capitulo": 1,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.pregunta",
+    "pk": 3,
+    "fields": {
+      "descripcion": "Pregunta Numérica",
+      "ponderacion": 5,
+      "sugerencia": "Sugerencia...",
+      "tipo": 3,
+      "capitulo": 1,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.pregunta",
+    "pk": 4,
+    "fields": {
+      "descripcion": "Pregunta de Ubicación",
+      "ponderacion": 5,
+      "sugerencia": "Sugerencia...",
+      "tipo": 4,
+      "capitulo": 1,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.pregunta",
+    "pk": 5,
+    "fields": {
+      "descripcion": "Pregunta Deslizante",
+      "ponderacion": 5,
+      "sugerencia": "Sugerencia...",
+      "tipo": 5,
+      "capitulo": 1,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.pregunta",
+    "pk": 6,
+    "fields": {
+      "descripcion": "Pregunta de Selección Múltiple",
+      "ponderacion": 5,
+      "sugerencia": "Sugerencia...",
+      "tipo": 6,
+      "capitulo": 1,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  },
+  {
+    "model": "capitulo.pregunta",
+    "pk": 7,
+    "fields": {
+      "descripcion": "Pregunta de Teléfono",
+      "ponderacion": 5,
+      "sugerencia": "Sugerencia...",
+      "tipo": 7,
+      "capitulo": 1,
+      "fecha_creacion": "2018-05-21T17:39:29+00:00",
+      "fecha_edicion": "2018-05-21T17:39:29+00:00"
+    }
+  }
+]

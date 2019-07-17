@@ -1,0 +1,36 @@
+.home {
+  .homeScrim {
+    position:fixed;
+    background: $dark-grey;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    width:100vw;
+    height: 100vh;
+  }
+  .fondo {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .logo {
+    img {
+      background: transparent;
+      width: 20vw;
+      height: auto;
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      margin-top: -10vw;
+      left: 50%;
+      margin-left: -10vw;
+    }
+  }
+  .buttonContainer {
+    position: fixed;
+    bottom: 5em;
+    right: 5em;
+    z-index: 1;
+  }
+}

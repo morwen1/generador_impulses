@@ -1,0 +1,160 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <h4 class="header">
+        <a href="{{ request.META.HTTP_REFERER }}">
+            <i class="material-icons white-text icon-bg-color main-bg">keyboard_arrow_left</i>
+        </a>
+    </h4>
+    <div class="row">
+        <div class="col s12">
+            <ul class="collection z-depth-1">
+                <li class="collection-item avatar">
+                    <i class="material-icons cyan circle">assignment_turned_in</i>
+                    <h5 class="collection-header m-0">
+                        <strong>Pregunta</strong>
+                    </h5>
+                    <p>{{ object.descripcion }}</p>
+                </li>
+                <li class="collection-item">
+                    <div class="row">
+                        <div class="col s4">
+                            <p class="collections-title">
+                                <strong>Sugerencia</strong>
+                            </p>
+                        </div>
+                        <div class="col s8">
+                            <p>{{ object.sugerencia }}</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="collection-item">
+                    <div class="row">
+                        <div class="col s4">
+                            <p class="collections-title">
+                                <strong>Tipo</strong>
+                            </p>
+                        </div>
+                        <div class="col s8">
+                            <p>{{ object.tipo }}</p>
+                        </div>
+                    </div>
+                </li>
+                {% if object.capitulo %}
+                    <li class="collection-item">
+                        <div class="row">
+                            <div class="col s4">
+                                <p class="collections-title">
+                                    <strong>Capitulo</strong>
+                                </p>
+                            </div>
+                            <div class="col s8">
+                                <p>{{ object.capitulo.nombre }}</p>
+                            </div>
+                        </div>
+                    </li>
+                {% endif %}
+                {% if object.ponderacion %}
+                    <li class="collection-item">
+                        <div class="row">
+                            <div class="col s4">
+                                <p class="collections-title">
+                                    <strong>Ponderación</strong>
+                                </p>
+                            </div>
+                            <div class="col s8">
+                                <p>{{ object.ponderacion }}%</p>
+                            </div>
+                        </div>
+                    </li>
+                {% endif %}
+                <li class="collection-item">
+                    <div class="row">
+                        <div class="col s4">
+                            <p class="collections-title">
+                                <strong>Fecha de creación</strong>
+                            </p>
+                        </div>
+                        <div class="col s8">
+                            <p>{{ object.fecha_creacion }}</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="collection-item">
+                    <div class="row">
+                        <div class="col s4">
+                            <p class="collections-title">
+                                <strong>Fecha de edición</strong>
+                            </p>
+                        </div>
+                        <div class="col s8">
+                            <p>{{ object.fecha_edicion }}</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    {% if capitulos %}
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col s12">
+                <table class="table-responsive highlight" style="background-color: white;">
+                    <thead>
+                    <tr>
+                        <th colspan="2" style="text-align: center;">Capitulos</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in capitulos %}
+                        <tr>
+                            <td>{{ item.nombre }}</td>
+                            <td>
+                                <a class="btn-floating waves-effect waves-light cyan"
+                                   href="{% url 'admin:capitulo-detail' item.pk %}">
+                                    <i class="material-icons">search</i>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% endif %}
+    <!--<div class='entityHeader--navBack'>
+        <div class='headerDisplay'>
+            <a href="{% url 'admin:pregunta-list' %}">
+                <span>
+                    <i class='material-icons'>keyboard_arrow_left</i>
+                </span>
+            </a>
+            <span>
+                <i class='material-icons'>class</i>
+            </span>
+            <h1>{{ object.descripcion }}</h1>
+        </div>
+    </div>
+    <table>
+    <tr>
+        <td>Sugerencia</td>
+        <td>{{ object.sugerencia }}</td>
+    </tr>
+    <tr>
+        <td>Tipo</td>
+        <td>{{ object.tipo.descripcion }}</td>
+    </tr>
+    {% if object.capitulo %}
+        <tr>
+            <td>Capitulo</td>
+            <td>{{ object.capitulo.nombre }}</td>
+        </tr>
+    {% endif %}
+    {% if object.ponderacion %}
+        <tr>
+            <td>Ponderación</td>
+            <td>{{ object.ponderacion }}%</td>
+        </tr>
+    {% endif %}
+    </table>-->
+{% endblock %}
