@@ -1,4 +1,4 @@
-Django==2.1
+Django==2.2.24
 django-appconf==1.0.2
 django-basicauth==0.5.1
 django-compressor==2.2
